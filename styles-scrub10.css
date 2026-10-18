@@ -30,7 +30,7 @@ section h2 { margin: 0; text-align: center; font-size: clamp(1.55rem, 2.5vw, 2.1
 .comparison-video { display: block; width: 100%; max-width: 1000px; height: auto; margin: 0 auto; background: #07111f; }
 .comparison-text { max-width: 1010px; margin: 32px auto 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.05rem, 1.55vw, 1.25rem); line-height: 1.8; }
 .results-section .heading-rule { margin-bottom: 16px; }
-.results-intro { margin: 0 auto 30px; color: var(--muted); font-size: .84rem; line-height: 1.5; text-align: center; }
+.results-intro { margin: 0 auto 30px; color: var(--muted); font-size: clamp(1.05rem, 1.55vw, 1.25rem); line-height: 1.5; text-align: center; }
 .results-card { border: 1px solid var(--line); border-radius: 16px; background: #fbfbfd; box-shadow: 0 10px 35px #26334a0b; overflow: hidden; }
 .case-picker { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; padding: 22px 20px; border-bottom: 1px solid var(--line); }
 .case-button { min-width: 82px; border: 1px solid #e0e2e8; background: #fff; color: #606671; border-radius: 999px; padding: 9px 16px; font-size: .91rem; }
