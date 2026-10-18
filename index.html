@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Private project page for Latent Velocity-Field Modeling for MRI Contrast Enhancement Kinetics World Model.">
+  <title>Latent Velocity-Field Modeling for MRI Contrast Enhancement Kinetics World Model</title>
+  <link rel="stylesheet" href="styles-scrub10.css">
+</head>
+<body>
+  <main>
+    <header class="paper-header">
+      <h1><span>Latent Velocity-Field Modeling</span> for MRI Contrast Enhancement Kinetics World Model</h1>
+      <p class="authors">Jindi Kong<sup>1</sup>, Yuting He<sup>1</sup>, Cong Xia<sup>2</sup> and Shuo Li<sup>1,*</sup></p>
+      <div class="affiliations">
+        <p><sup>1</sup> Case Western Reserve University, Cleveland, OH, USA</p>
+        <p><sup>2</sup> Jiangsu Cancer Hospital, Nanjing, Jiangsu, China</p>
+      </div>
+      <p class="corresponding">* Corresponding author</p>
+    </header>
+
+    <section class="comparison-section" aria-labelledby="comparison-title">
+      <h2 id="comparison-title">Limitation: Local Smoothness, But Fragmented Kinetics</h2>
+      <div class="heading-rule" aria-hidden="true"></div>
+      <video class="comparison-video" controls autoplay muted loop playsinline preload="auto" aria-label="Limitation: local smoothness and fragmented kinetics">
+        <source src="assets/limitation-20261018.mp4" type="video/mp4">
+        Your browser does not support MP4 playback.
+      </video>
+      <p class="comparison-text">Existing methods utilize smoothness regularization, but struggle with <strong><em>fragmented kinetics</em></strong>. They impose constraints on predicted states or their temporal differences at discrete observed time points to promote temporal smoothness. However, these constraints regularize changes between neighboring time points without explicitly linking enhancement dynamics across different temporal intervals. Thus, the predictions remain locally smooth but exhibit incoherent transitions between intervals, resulting in fragmented kinetics, such as abrupt intensity changes across temporal intervals.</p>
+    </section>
+
+    <section class="ideas-section" aria-labelledby="ideas-title">
+      <h2 id="ideas-title">Motivation：Modeling a shared velocity field over time</h2>
+      <div class="heading-rule" aria-hidden="true"></div>
+      <p class="motivation"><em>Motivation</em>: Modeling a shared latent velocity field over time is essential to promote globally coherent contrast enhancement kinetics by linking state evolution across temporal intervals. Sparse observed state changes constrain the accumulated latent velocities within temporal intervals. By jointly constraining the same velocity function across different intervals, sparse observations provide not only supervision of discrete states but also constraints on the underlying latent kinetics within unobserved intervals, thereby promoting coherent enhancement evolution over time.</p>
+      <figure class="figure-one">
+        <img src="assets/motivation.png" alt="A shared velocity field links enhancement dynamics over time to promote globally coherent kinetics" loading="lazy">
+      </figure>
+    </section>
+
+    <section class="results-section" aria-labelledby="results-title">
+      <h2 id="results-title">Results</h2>
+      <div class="heading-rule" aria-hidden="true"></div>
+      <p class="results-intro">Explore predictions and velocity fields at any time, including extrapolation, by playing the video or dragging the timeline.</p>
+      <div class="results-card">
+        <div class="case-picker" role="tablist" aria-label="Abdominal cases">
+          <button class="case-button active" type="button" role="tab" aria-selected="true" aria-controls="case-panel" data-case="1" data-src="assets/case-1-scrub10.mp4" data-poster="assets/case-1-poster.jpg">Case 1</button>
+          <button class="case-button" type="button" role="tab" aria-selected="false" aria-controls="case-panel" data-case="2" data-src="assets/case-2-scrub10.mp4" data-poster="assets/case-2-poster.jpg">Case 2</button>
+          <button class="case-button" type="button" role="tab" aria-selected="false" aria-controls="case-panel" data-case="3" data-src="assets/case-3-scrub10.mp4" data-poster="assets/case-3-poster.jpg">Case 3</button>
+          <button class="case-button" type="button" role="tab" aria-selected="false" aria-controls="case-panel" data-case="4" data-src="assets/case-5-scrub10.mp4" data-poster="assets/case-5-poster.jpg">Case 4</button>
+          <button class="case-button" type="button" role="tab" aria-selected="false" aria-controls="case-panel" data-case="5" data-src="assets/case-6-scrub10.mp4" data-poster="assets/case-6-poster.jpg">Case 5</button>
+        </div>
+        <div id="case-panel" class="case-panel" role="tabpanel" aria-label="Abdominal result video">
+          <div class="video-stage">
+            <video id="result-video" preload="none" playsinline poster="assets/case-1-poster.jpg" aria-label="Case 1 abdominal MRI result visualization">Your browser does not support MP4 playback.</video>
+            <img id="video-cover" src="assets/case-1-poster.jpg" alt="" aria-hidden="true">
+          </div>
+          <div class="video-controls">
+            <button id="play-button" class="play-button" type="button" aria-label="Play video">▶</button>
+            <span id="elapsed-time" class="time-label">0:00</span>
+            <div id="video-progress" class="seek-track" role="slider" tabindex="0" aria-label="Video progress" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="0" aria-valuetext="0:00 of 0:00"><span class="seek-fill"></span><span class="seek-thumb"></span></div>
+            <span id="total-time" class="time-label">0:00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <script src="script-scrub10.js" defer></script>
+</body>
+</html>
